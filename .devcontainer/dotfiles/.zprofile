@@ -35,20 +35,22 @@ load_oh_my_zsh() {
         sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
     fi
 
-    omz_plugin_install zsh-users/zsh-autosuggestions
-    omz_plugin_install zsh-users/zsh-syntax-highlighting
-    omz_plugin_install zsh-users/zsh-history-substring-search
+    omz_plugin_install marlonrichert/zsh-autocomplete
     omz_plugin_install qoomon/zsh-lazyload
+    omz_plugin_install zsh-users/zsh-autosuggestions
+    omz_plugin_install zsh-users/zsh-history-substring-search
+    omz_plugin_install zsh-users/zsh-syntax-highlighting
 
     ZSH_THEME=""
 
     plugins=(
         git
         docker
+        zsh-autocomplete
         zsh-autosuggestions
-        zsh-syntax-highlighting
         zsh-history-substring-search
         zsh-lazyload
+        zsh-syntax-highlighting
     )
 
     if [ -e "${omz}/oh-my-zsh.sh" ]; then
@@ -63,8 +65,13 @@ main() {
 
     zstyle ':completion:\*' menu select
 
-    autoload bashcompinit && bashcompinit
-    autoload -Uz compinit && compinit
+    if [ -f "${ZSH}/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh" ]; then
+        source "${ZSH}/custom/plugins/zsh-autocomplete/zsh-autocomplete.plugin.zsh"
+    else
+        autoload bashcompinit && bashcompinit
+        autoload -Uz compinit && compinit
+    fi
+
 
     if command -v mise &>/dev/null; then
         eval "$(mise activate "$(basename "${SHELL}")")"
