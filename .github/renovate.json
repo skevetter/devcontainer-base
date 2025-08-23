@@ -1,5 +1,6 @@
 {
-  "repositories": ["skevetter/devcontainer-base"],
+  "$schema": "https://docs.renovatebot.com/renovate-schema.json",
+  "extends": ["config:base"],
   "pre-commit": {
     "enabled": true
   }
