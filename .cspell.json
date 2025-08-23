@@ -1,0 +1,33 @@
+{
+  "ignoreRegExpList": ["dev*"],
+  "ignorePaths": [
+    "**/.config/**",
+    "**/.devcontainer/**",
+    "**/.github/**",
+    "**/.pre-commit-config.yaml",
+    "**/.prettierrc",
+    "**/.zprofile",
+    "**/package.json"
+  ],
+  "dictionaries": [
+    "bash",
+    "css",
+    "docker",
+    "en_US",
+    "en-gb",
+    "filetypes",
+    "github-actions",
+    "go",
+    "html",
+    "javascript",
+    "json",
+    "markdown",
+    "misc",
+    "node",
+    "npm",
+    "python",
+    "softwareTerms",
+    "typescript",
+    "yaml"
+  ]
+}
