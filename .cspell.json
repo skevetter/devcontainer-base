@@ -7,7 +7,8 @@
     "**/.pre-commit-config.yaml",
     "**/.prettierrc",
     "**/.zprofile",
-    "**/package.json"
+    "**/package.json",
+    "**/renovate.json"
   ],
   "dictionaries": [
     "bash",
