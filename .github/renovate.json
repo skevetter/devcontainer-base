@@ -1,4 +1,5 @@
 {
+  "repositories": ["skevetter/devcontainer-base"],
   "pre-commit": {
     "enabled": true
   }
