@@ -17,7 +17,7 @@ jobs:
           secrets: |
             ${{ secrets.RENOVATE_TOKEN_UUID }} > RENOVATE_TOKEN
 
-      - uses: renovatebot/github-action@v43.0.8
+      - uses: renovatebot/github-action@v43.0.9
         with:
           token: ${{ env.RENOVATE_TOKEN }}
         env:
